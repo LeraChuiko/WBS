@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 body {
+  overflow-x: hidden;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: system-ui;
@@ -14,19 +16,57 @@ body {
 }
 
 header {
+  position: relative;
   padding: 2rem 2rem;
   padding-top: 6rem;
-  background-image: url("https://images.pexels.com/photos/35744856/pexels-photo-35744856.jpeg"); /* Укажи путь к картинке */
-  background-size: cover; /* Картинка полностью заполняет фон, сохраняя пропорции */
-  background-position: center; /* Фон центрируется */
-  background-repeat: no-repeat; /* Фон не повторяется */
+  background-image: url("images/header-bg.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*.header-overlay {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
+  gap: 1rem; 
+  padding: 2rem;
+  pointer-events: none;
+}*/
+
+.header-overlay {
+  display: flex;
+  flex-direction: row;      /* Ряд: фото слева, текст справа */
+  align-items: center;      /* Вертикальное центрирование */
+  justify-content: flex-start; /* Прижимаем к левому краю */
+  gap: 2rem;                /* Расстояние между фото и текстом */
+  padding: 2rem;
+  pointer-events: none;
+  max-width: 1000px;        /* Ограничим ширину, чтобы не разлеталось по экрану */
+  margin: 0 auto;           /* Центрируем весь блок на странице */
+}
+
+.header-overlay img {
+  width: 150px; /* Фиксированный размер */
+  height: 150px;
+  border-radius: 50%; /* Круглая форма */
+  object-fit: cover;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+}
+
+
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Стили для ссылок-кнопок */
 nav ul li a {
   display: inline-block; /* Позволяет задавать блочные размеры (padding) */
   padding: 0.6rem 1.2rem; /* Внутренние отступы для размера кнопки */
-  background-color: #302f33; /* Цвет фона кнопки */
+  background-color: #4f3017; /* Цвет фона кнопки */
   color: #ffffff; /* Цвет текста на кнопке */
   border-radius: 20px; /* Скругление углов */
   text-decoration: none; /* Убираем подчеркивание */
@@ -54,34 +94,14 @@ header a:hover {
   color: hotpink;
 }
 
-header img {
-  display: block;
-  max-width: 300px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  object-fit: cover;
-
-  margin: 5rem,auto;
-  border: 20px solid rgba(255, 255, 255, 0.3);
-}
-
-.header-overlay {
-  position: absolute; /* Позиционируем текст относительно хедера */
-  top: 35%;           /* Сдвигаем вниз до центра */
-  left: 85%;          /* Сдвигаем вправо до центра */
-  transform: translate(-50%, -50%); /* Идеальное центрирование */
-  width: 100%;
-  /*text-align: center;*/
-  pointer-events: none; /* Чтобы текст не мешал кликать на кнопки */
-}
-
 .header-title {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Чистый шрифт */
-  font-weight: 300;     /* Тонкое начертание */
-  font-size: 3rem;      /* Размер текста */
-  color: #ffffff;       /* Белый цвет */
-  letter-spacing: 2px;  /* Добавляем немного воздуха между буквами */
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* Легкая тень, чтобы текст читался на любом фоне */
+  font-family:
+    "Helvetica Neue", Helvetica, Arial, sans-serif; /* Чистый шрифт */
+  font-weight: 300; /* Тонкое начертание */
+  font-size: 3rem; /* Размер текста */
+  color: #ffffff; /* Белый цвет */
+  letter-spacing: 2px; /* Добавляем немного воздуха между буквами */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Легкая тень, чтобы текст читался на любом фоне */
 }
 
 h1 {
@@ -100,16 +120,19 @@ main section {
 
 main p {
   max-width: 80ch;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+main h2 {
+  margin-bottom: 1rem; /* Расстояние между заголовком и тем, что идет после него */
+  margin-top: 2rem;    /* Расстояние сверху, чтобы отделить секцию от предыдущей */
 }
 
 section li h3,
 section li p {
   font-size: 0.8rem;
   letter-spacing: 0.5px;
-}
-
-section li {
-  margin: 0.5rem 0;
 }
 
 footer {
@@ -159,4 +182,63 @@ footer {
 .contacts-list li a {
   color: white;
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  /* Уменьшаем отступы основного контента, чтобы ничего не распирало */
+  main {
+    margin: 1rem 0.5rem; /* Сделали отступы еще меньше по бокам */
+  }
+  header {
+    padding-top: 12rem;
+  }
+
+  .header-overlay {
+    flex-direction: column; /* На мобильных снова столбик */
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .header-title {
+    font-size: 1.8rem; /* Уменьшаем размер текста для мобилки */
+    line-height: 1.2; /* Добавляем межстрочный интервал, чтобы текст был читаемее */
+    text-align: center;
+  }
+
+  .nav-list {
+    flex-direction: column; /* Кнопки друг под другом */
+    align-items: center; /* ВАЖНО: это центрирует их по горизонтали */
+    padding: 1rem 0; /* Убираем отступы по бокам */
+    gap: 0.5rem;
+
+    width: 100%; /* Растягиваем контейнер на всю ширину */
+    margin: 0; /* Убираем внешние отступы */
+  }
+
+  .nav-list li {
+    width: 90%; /* Кнопки будут чуть уже экрана (по бокам будет воздух) */
+    display: flex; /* Включаем flex для элемента списка */
+    justify-content: center; /* Центрируем саму кнопку */
+  }
+
+  /* 2. Убираем подложки (фоновый цвет) у кнопок */
+  .nav-list li a {
+    /*border: 1px solid white;                 /* Можно оставить тонкую рамку, если хочешь */
+    /*color: white;  */
+    background: none;
+    /* padding: 1rem 0;          */
+  }
+
+  .contacts-list {
+    flex-direction: column; /* Ставим контакты друг под другом */
+    align-items: center; /* Центрируем их */
+    gap: 0.5rem; /* Уменьшаем отступы */
+    text-align: center;
+  }
+
+  footer {
+    padding: 30px 20px; /* Уменьшаем отступы, чтобы футер был компактнее */
+    font-size: 0.7rem; /* Чуть уменьшаем шрифт */
+  }
 }
