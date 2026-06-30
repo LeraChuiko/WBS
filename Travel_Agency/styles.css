@@ -4,23 +4,24 @@
   box-sizing: border-box;
 }
 
-header {
+body {
   display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  margin: 0;   
+}
+
+header {
+  display: flex; /*header flex*/
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-
-  /* Фоновая картинка хедера */
   background-size: cover;
   background-position: center;
   background-color: rgba(0, 0, 0, 0.5);
-
-  /* Липкость */
-  position: sticky;
+  position: sticky; /*position sticky*/
   top: 0;
   z-index: 1000;
-
-  /* Чтобы текст логотипа и навигации читался на фоне */
   color: white;
   text-shadow: 1px 1px 3px black;
 }
@@ -76,31 +77,30 @@ h2 {
 }
 
 .gallery {
-  display: block;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: block; /*block*/
   gap: 15px;
   padding: 15px;
 }
 
 .gallery img {
-  width: 100%; /* Картинка всегда на ширину ячейки */
-  height: 250px; /* Фиксированная высота для красоты */
-  object-fit: cover; /* Чтобы картинки не искажались, а обрезались по центру */
+  width: 100%; 
+  height: 250px; 
+  object-fit: cover; 
   border-radius: 8px;
 }
 
 .grid-container {
-  display: grid;
-  /* Это создаст 3 колонки, если место позволяет */
+  display: grid;  
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
 footer {
-  display: flex;
-  justify-content: space-between; /* Распределяем элементы по краям */
-  align-items: center; /* Выравниваем по вертикали в центре */
+  display: flex; /*display*/
+  justify-content: space-between; 
+  align-items: center; 
   padding: 20px;
-  background-color: #333; /* Темный фон для футера */
+  background-color: #333; 
   color: white;
+ 
 }
