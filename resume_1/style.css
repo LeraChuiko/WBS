@@ -25,16 +25,6 @@ header {
   background-repeat: no-repeat;
 }
 
-/*.header-overlay {
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center;
-  gap: 1rem; 
-  padding: 2rem;
-  pointer-events: none;
-}*/
-
 .header-overlay {
   display: flex;
   flex-direction: row; /* Ряд: фото слева, текст справа */
@@ -134,12 +124,16 @@ section li p {
 }
 
 footer {
-  margin-top: 2rem;
+margin-top: 2rem;
   background-color: #333333;
   color: white;
-  text-align: center;
   font-size: 0.8rem;
   padding: 50px 40px;
+  
+  /* Добавляем Flex здесь, чтобы работало везде */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-list {
@@ -235,10 +229,4 @@ footer {
     text-align: center;
   }
 
-  footer {
-    display: flex; /*display*/
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-  }
 }
