@@ -37,14 +37,14 @@ header {
 
 .header-overlay {
   display: flex;
-  flex-direction: row;      /* Ряд: фото слева, текст справа */
-  align-items: center;      /* Вертикальное центрирование */
+  flex-direction: row; /* Ряд: фото слева, текст справа */
+  align-items: center; /* Вертикальное центрирование */
   justify-content: flex-start; /* Прижимаем к левому краю */
-  gap: 2rem;                /* Расстояние между фото и текстом */
+  gap: 2rem; /* Расстояние между фото и текстом */
   padding: 2rem;
   pointer-events: none;
-  max-width: 1000px;        /* Ограничим ширину, чтобы не разлеталось по экрану */
-  margin: 0 auto;           /* Центрируем весь блок на странице */
+  max-width: 1000px; /* Ограничим ширину, чтобы не разлеталось по экрану */
+  margin: 0 auto; /* Центрируем весь блок на странице */
 }
 
 .header-overlay img {
@@ -54,8 +54,6 @@ header {
   object-fit: cover;
   border: 5px solid rgba(255, 255, 255, 0.3);
 }
-
-
 
 img {
   max-width: 100%;
@@ -126,7 +124,7 @@ main p {
 
 main h2 {
   margin-bottom: 1rem; /* Расстояние между заголовком и тем, что идет после него */
-  margin-top: 2rem;    /* Расстояние сверху, чтобы отделить секцию от предыдущей */
+  margin-top: 2rem; /* Расстояние сверху, чтобы отделить секцию от предыдущей */
 }
 
 section li h3,
@@ -238,7 +236,9 @@ footer {
   }
 
   footer {
-    padding: 30px 20px; /* Уменьшаем отступы, чтобы футер был компактнее */
-    font-size: 0.7rem; /* Чуть уменьшаем шрифт */
+    display: flex; /*display*/
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
   }
 }
