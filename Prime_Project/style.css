@@ -1,0 +1,56 @@
+/* General reset for better visualization */
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* 1. Header: Light Green */
+.header {
+    background-color: #98FB98; /* Pale Green */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 2. Hero: Tiffany Blue */
+.hero {
+    background-color: #81D8D0; /* Tiffany Blue */
+    padding: 50px;
+    display: flex;
+}
+
+/* 3. Trusted: Pink */
+.trusted {
+    background-color: #FFC0CB; /* Pink */
+    padding: 20px;
+}
+
+/* 4. Video: Violet */
+.video-section {
+    background-color: #EE82EE; /* Violet */
+    padding: 40px;
+}
+
+/* 5. Features: Light Green */
+.features {
+    background-color: #98FB98;
+    padding: 40px;
+}
+
+/* 6. Why Choose: Tiffany Blue */
+.why-choose {
+    background-color: #81D8D0;
+    padding: 40px;
+}
+
+/* 7. Pricing: Pink */
+.pricing-section {
+    background-color: #FFC0CB;
+    padding: 40px;
+}
+
+/* 8. Footer: Violet */
+.footer {
+    background-color: #EE82EE;
+    padding: 20px;
+}
