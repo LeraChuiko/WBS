@@ -19,6 +19,7 @@ const übersetzerPigLatin = function (word) {
   }
 };
 
+//das Array zu durchlaufen
 latin_satz_massiv = satz_massiv.map(übersetzerPigLatin); //ohne () für function
 const latin_satz = latin_satz_massiv.join(" ");
 const final_satz = latin_satz[0].toUpperCase() + latin_satz.slice(1);
